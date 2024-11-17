@@ -36,4 +36,12 @@ module.exports = class ReportingApi {
   attachment(file, description) {
     this.reporter.sendLog({ message: description, file });
   }
+
+  log(description) {
+    this.reporter.sendLog({ message: description });
+  }
+
+  error(description) {
+    this.reporter.sendLog({ message: description, level: 'error' });
+  }
 };
